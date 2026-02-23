@@ -14,6 +14,23 @@ classifiers = [
   "Programming Language :: Python :: 3",
   "License :: OSI Approved :: MIT License",
 ]
+dependencies = [
+  "numpy",
+  "pandas",
+  "networkx",
+]
+
+[project.optional-dependencies]
+train = [
+  "torch",
+  "nff",
+  "matplotlib",
+]
+predict = [
+  "torch",
+  "nff",
+  "ase",
+]
 
 [project.urls]
 Homepage = "https://github.com/<OWNER>/AutoNanoShape"
