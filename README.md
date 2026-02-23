@@ -5,24 +5,27 @@ AutoNanoShape packaged as a Python library with a thin API wrapper around the ex
 ## Install
 
 ```bash
-pip install --extra-index-url https://<TOKEN>@pypi.pkg.github.com/<OWNER> autonanoshape
+# from the repo root
+pip install .
 ```
 
-Replace:
-- `<OWNER>` with your GitHub org/user name
-- `<TOKEN>` with a GitHub token that has `read:packages`
+Editable (dev) install:
+
+```bash
+pip install -e .
+```
 
 ## Optional Extras
 
 ```bash
 # dataset creation helpers
-pip install --extra-index-url https://<TOKEN>@pypi.pkg.github.com/<OWNER> "autonanoshape[data]"
+pip install ".[data]"
 
 # training helpers
-pip install --extra-index-url https://<TOKEN>@pypi.pkg.github.com/<OWNER> "autonanoshape[train]"
+pip install ".[train]"
 
 # prediction helpers
-pip install --extra-index-url https://<TOKEN>@pypi.pkg.github.com/<OWNER> "autonanoshape[predict]"
+pip install ".[predict]"
 ```
 
 ## Quick Start (Python API)
@@ -60,15 +63,6 @@ ans.predict(
     input_path="init.traj",
     output_path="ensemble_results.txt",
 )
-```
-
-## Publish
-
-This repo includes `.github/workflows/publish.yml` which publishes on tag pushes.
-
-```bash
-git tag v0.1.0
-git push --tags
 ```
 
 ## Build Locally
