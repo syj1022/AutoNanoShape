@@ -22,3 +22,10 @@ Tag a release:
 git tag v0.1.0
 git push --tags
 ```
+
+## Build locally
+
+```bash
+python -m pip install --upgrade build
+python -m build
+```
