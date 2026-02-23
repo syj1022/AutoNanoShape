@@ -2,7 +2,7 @@
 
 AutoNanoShape packaged as a Python library with a thin API wrapper around the existing scripts.
 
-## Install (GitHub Packages)
+## Install
 
 ```bash
 pip install --extra-index-url https://<TOKEN>@pypi.pkg.github.com/<OWNER> autonanoshape
@@ -62,7 +62,7 @@ ans.predict(
 )
 ```
 
-## Publish (GitHub Packages)
+## Publish
 
 This repo includes `.github/workflows/publish.yml` which publishes on tag pushes.
 
