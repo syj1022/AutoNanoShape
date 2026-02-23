@@ -5,7 +5,8 @@ AutoNanoShape packaged as a Python library with a thin API wrapper around the ex
 ## Install
 
 ```bash
-# from the repo root
+git clone https://github.com/syj1022/AutoNanoShape.git
+cd AutoNanoShape
 pip install .
 ```
 
