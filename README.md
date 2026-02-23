@@ -13,3 +13,12 @@ pip install --extra-index-url https://<TOKEN>@pypi.pkg.github.com/<OWNER> autona
 ```python
 import autonanoshape as ans
 ```
+
+## Publish
+
+Tag a release:
+
+```bash
+git tag v0.1.0
+git push --tags
+```
