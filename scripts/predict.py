@@ -11,6 +11,8 @@ from mcmc.calculators import EnsembleNFFSurface
 from ase.io import read
 from glob import glob
 
+from autonanoshape.predict_utils import summarize_uncertainty
+
 
 def predict(
     *,
@@ -60,9 +62,9 @@ def predict(
     opt = BFGS(bulk)
     opt.run(fmax=fmax, steps=steps)
 
-    energy_std = calc.results.get("energy_std", None) / len(bulk) * 1000
+    energy_std = calc.results.get("energy_std", None)
     forces_std = calc.results.get("forces_std", None)
-    force_std_mean = np.mean(np.linalg.norm(forces_std, axis=1))
+    uncertainty = summarize_uncertainty(energy_std, forces_std, natoms=len(bulk))
 
     symbols = bulk.get_chemical_symbols()
     num_O = symbols.count("O")
@@ -84,14 +86,14 @@ def predict(
 
     summary = {
         "raw_energy": corrected_energy,
-        "energy_std_mev_per_atom": float(np.mean(energy_std)),
-        "mean_force_std": force_std_mean,
+        "energy_std_mev_per_atom": uncertainty["energy_std_mev_per_atom"],
+        "mean_force_std": uncertainty["mean_force_std"],
     }
 
     with open(output_path, "a") as f:
         f.write(f"Raw energy = {corrected_energy:.6f} eV\n")
-        f.write(f"Energy s.t.d. = {float(np.mean(energy_std)):.6f} meV/atom\n")
-        f.write(f"Mean force s.t.d. = {force_std_mean:.6f} eV/Å\n")
+        f.write(uncertainty["lines"][0] + "\n")
+        f.write(uncertainty["lines"][1] + "\n")
         f.write("\n")
 
     return summary

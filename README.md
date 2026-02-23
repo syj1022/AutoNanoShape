@@ -8,6 +8,19 @@ AutoNanoShape packaged for GitHub Packages.
 pip install --extra-index-url https://<TOKEN>@pypi.pkg.github.com/<OWNER> autonanoshape
 ```
 
+## Optional extras
+
+```bash
+# dataset creation helpers
+pip install --extra-index-url https://<TOKEN>@pypi.pkg.github.com/<OWNER> \"autonanoshape[data]\"
+
+# training helpers
+pip install --extra-index-url https://<TOKEN>@pypi.pkg.github.com/<OWNER> \"autonanoshape[train]\"
+
+# prediction helpers
+pip install --extra-index-url https://<TOKEN>@pypi.pkg.github.com/<OWNER> \"autonanoshape[predict]\"
+```
+
 ## Quick Start
 
 ```python

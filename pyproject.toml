@@ -21,6 +21,10 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+data = [
+  "torch",
+  "nff",
+]
 train = [
   "torch",
   "nff",
