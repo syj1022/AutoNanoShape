@@ -7,4 +7,4 @@ def test_data_extra_defined():
     extras = data["project"]["optional-dependencies"]
     assert "data" in extras
     assert "torch" in extras["data"]
-    assert "nff" in extras["data"]
+    assert any(dep.startswith("nff @") for dep in extras["data"])

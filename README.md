@@ -29,6 +29,8 @@ pip install ".[train]"
 pip install ".[predict]"
 ```
 
+`predict` installs `torch`, `nff`, and `ase`.
+
 ## Quick Start (Python API)
 
 ```python

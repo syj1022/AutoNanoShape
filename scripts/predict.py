@@ -7,7 +7,6 @@ from nff.io.ase_calcs import NeuralFF, EnsembleNFF
 from nff.io.ase import AtomsBatch
 from ase.optimize import BFGS
 from nff.utils.cuda import cuda_devices_sorted_by_free_mem
-from mcmc.calculators import EnsembleNFFSurface
 from ase.io import read
 from glob import glob
 

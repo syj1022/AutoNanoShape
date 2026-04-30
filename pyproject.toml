@@ -23,16 +23,16 @@ dependencies = [
 [project.optional-dependencies]
 data = [
   "torch",
-  "nff",
+  "nff @ git+https://github.com/learningmatter-mit/NeuralForceField.git",
 ]
 train = [
   "torch",
-  "nff",
+  "nff @ git+https://github.com/learningmatter-mit/NeuralForceField.git",
   "matplotlib",
 ]
 predict = [
   "torch",
-  "nff",
+  "nff @ git+https://github.com/learningmatter-mit/NeuralForceField.git",
   "ase",
 ]
 
